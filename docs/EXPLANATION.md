@@ -8,7 +8,7 @@ There is no Bloomberg or CBOE feed. The “market” is a Monte Carlo book from 
 
 - Instantaneous vol is \(\sigma_0\exp(\nu X_t + \ell \log(S_t/S_0))\).
 - \(X_t\) is a fast mean-reverting Gaussian factor driven by a Brownian motion **correlated** with spot (the usual equity \(\rho < 0\)).
-- The extra \(\ell\log(S/S_0)\) term is **leverage / local-vol**: OTM puts see higher vol because the spot has already fallen, even if \(X\) has not jumped.
+- The extra \(\ell\log(S/S_0)\) term is **leverage / local vol**: OTM puts see higher vol because the spot has already fallen, even if \(X\) has not jumped.
 
 That combination makes a **steep short-dated SPX put skew** without needing Heston-sized vol-of-vol. The book stores:
 
@@ -96,4 +96,4 @@ The SDE is Markov in \((S,V)\), so this is not “the model is non-Markov.” It
 
 **Can I trust the 183 vol RMSE on Heston VIX options?** Directionally yes (convexity is wildly overstated). The number is large because Heston VIX IVs land near 280 while the PDV proxy’s “VIX vol” is already ~108 — short-dated options on a pathwise realized-vol proxy are themselves very convex. Do not quote 183 as a CBOE number.
 
-**What would you do next on a desk?** (1) Replace the QV proxy with a discrete log-contract strip. (2) Nested MC or a Markov regression for true \(\mathcal{F}_t\) VIX. (3) Calibrate to a real snapshot with bid–ask filters. (4) Regularize the leverage function against Dupire local-vol. (5) Put the residual heatmap on a limit.
+**What would you do next on a desk?** (1) Replace the QV proxy with a discrete log-contract strip. (2) Nested MC or a Markov regression for true \(\mathcal{F}_t\) VIX. (3) Calibrate to a real snapshot with bid–ask filters. (4) Regularize the leverage function against Dupire local vol. (5) Put the residual heatmap on a limit.
