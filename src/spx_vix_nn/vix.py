@@ -3,7 +3,7 @@
 CBOE VIX is a discrete log-contract strip. Here VIX on a path at observation
 date t is the RMS of instantaneous variance over the next 21 trading days:
 
-    VIX_t = sqrt( (1/Delta) int_t^{t+Delta} sigma_u^2 du )   (pathwise Riemann sum)
+    VIX_t = sqrt( (1/Δ) ∫_t^{t+Δ} σ_u² du )   (pathwise Riemann sum)
 
 That is a realized-vol proxy, not the true (conditional-expectation) VIX.
 The synthetic book and the neural SDE use the same definition, so the joint

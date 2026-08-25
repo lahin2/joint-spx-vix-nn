@@ -17,4 +17,5 @@ def test_heston_joint_residual_exceeds_neural():
     joint_h = h["spx_iv"] ** 2 + h["vix_fut"] ** 2 + h["vix_iv"] ** 2
     joint_n = n["spx_iv"] ** 2 + n["vix_fut"] ** 2 + n["vix_iv"] ** 2
     assert joint_h > joint_n
+    # The puzzle: Heston can look decent on SPX while missing VIX.
     assert h["vix_fut"] + h["vix_iv"] > n["vix_fut"] + n["vix_iv"]

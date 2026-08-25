@@ -5,7 +5,7 @@ from spx_vix_nn.vix import vix_pathwise_np
 
 
 def test_black_scholes_vix_equals_sigma():
-    """Constant instantaneous vol implies pathwise VIX proxy equals that vol."""
+    """Constant instantaneous vol ⇒ pathwise VIX proxy equals that vol."""
     grid = Grid()
     n = 512
     sigma = 0.2

@@ -14,8 +14,11 @@ DT = 1.0 / TRADING_DAYS
 VIX_WINDOW_DAYS = 21
 VIX_DELTA = VIX_WINDOW_DAYS / TRADING_DAYS
 
+# SPX option expiries (trading days) and VIX future/option dates.
 SPX_EXPIRY_DAYS = (5, 21, 42)
 VIX_OBS_DAYS = (5, 21, 42)
+
+# Extra days so every VIX observation has a 21-day continuation.
 HORIZON_DAYS = max(VIX_OBS_DAYS) + VIX_WINDOW_DAYS
 
 LOG_MONEYNESS = (
