@@ -46,7 +46,7 @@ class NeuralSLV(nn.Module):
         self.raw_kappa = nn.Parameter(torch.tensor(1.2))
         self.raw_theta = nn.Parameter(torch.tensor(0.20))
         self.raw_xi = nn.Parameter(torch.tensor(0.7))
-        self.raw_rho = nn.Parameter(torch.tensor(-0.9))  # atanh-ish via tang
+        self.raw_rho = nn.Parameter(torch.tensor(-0.9))  # atanh-ish via tanh
 
     @property
     def v0(self) -> torch.Tensor:
