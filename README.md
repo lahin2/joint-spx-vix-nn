@@ -21,20 +21,6 @@ The learned variance factor correlates **−0.78** with an EWMA of past log-retu
 
 Public repo: [github.com/lahin2/joint-spx-vix-nn](https://github.com/lahin2/joint-spx-vix-nn)
 
----
-
-## Screen-share script (what to say)
-
-Open the Streamlit desk (`app.py`) and walk left-to-right:
-
-1. **Sidebar.** One synthetic close. No Bloomberg. Truth is path-dependent vol (EWMA shock + leverage). Two models mark that book.
-2. **Market & puzzle.** Heston is fit to SPX only, then frozen. SPX looks acceptable; VIX futures are cheap; VIX options are wildly too convex. That mismatch *is* the interview question.
-3. **Calibration.** Joint IV loss, recovered Heston-like parameters, and \(\mathrm{corr}(V_t,\mathrm{EWMA\ of\ past\ log\ returns})\approx -0.78\). Say out loud: the SDE is still Markov in \((S,V)\); the *calibrated* factor just learned to track past returns.
-4. **Risk / structuring.** Translate a 2-vol VIX miss into dollars on a $10k vega book. Show the SPX wing-fly model-risk P&L. That is the structuring punchline: you cannot finance a VIX call with an SPX put fly if the two smiles are marked with different models.
-
-Then open [docs/EXPLANATION.md](docs/EXPLANATION.md) if they want the VIX-proxy caveat (pathwise RMS vs CBOE log-contract vs true \(\mathcal{F}_t\) VIX).
-
----
 
 ## Why this problem exists
 
